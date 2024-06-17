@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Gemipedia</title>
+</head>
+<body>
+    <div class="main-container">
+        <navbar class="navbar">
+            <div class="left-align" id="date"></div>
+
+            <div class="center-align">Gemipedia!</div>
+
+            <div class="right-align" id="time"></div>
+            
+        </navbar>
+    
+        <section class="main">
+            <h1 class="greeting">Hello <i>Amigo!</i><br>How Can I Help You Today?</h1> <br>
+            
+
+            <div class="input-container">
+                <!--input class="input-field long" type="text" placeholder="Search Here..." required>
+
+                <button type="button"><i class="icon1"><span class="material-symbols-outlined">
+                    search</span></i></button>
+                
+                <button type="button"><i class="icon2"><span class="material-symbols-outlined">
+                    mic</span></i></button>
+
+                    <button type="button"><i class="icon3"><span class="material-symbols-outlined">
+                    image</span></i></button-->
+                
+            </div>
+            <br> <br>
+            <div class="btn">
+            <button class="search" onclick="goToGoogle()">GOOGLE</button>
+            <button class="search" onclick="goToWikipedia()">WIKIPEDIA</button>
+            <button class="search" onclick="goToGemini()">GEMINI</button>
+
+            <br> <br> <br>
+            </div>
+            <br> <br> <br> <br> <br> <br> <br>
+        </section>
+        
+    </div>
+
+    <script>
+        function goToGoogle() {
+          window.location.href = './Google/index.html'; 
+        }
+
+        function goToWikipedia() {
+          window.location.href = './Wikipedia/index.html'; 
+        }
+
+        function goToGemini() {
+          window.location.href = './Gemini/index.html'; 
+        }
+
+    </script>
+    
+    <script src="./script.js"></script>
+</body>
+</html>

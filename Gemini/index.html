@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="../Gemini/index.html">GEMINI</a></li>
+        <li><a href="../Wikipedia/index.html">WIKIPEDIA</a></li>
+        <li><a href="../Google/index.html">GOOGLE</a></li>
+        <li><a href="../index.html">HOME</a></li>
+      </ul>
+    <div class="main">
+        <div class="left">
+            <i class="fa-solid fa-bars"></i>
+            <div class="new_chat">
+                <div class="new_Chat1"><span>+</span> New Chat</div>
+                
+            </div>
+
+            <div class="last">
+                <div>
+                    <span class="icon"><i class="fa-regular fa-circle-question"></i></span>
+                    <span>Help</span>
+                </div>
+                <div>
+                    <span class="icon"><i class="fa-solid fa-arrow-rotate-left"></i></span>
+                    <span>Activity</span>
+                </div>
+                <div>
+                    <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                    <span>Setting</span>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="header">
+                <select name="" id="">
+                    <option value="">Gemini</option>
+                    <option value="">Advance Gemini</option>
+                </select>
+                <div>
+                    <div class="advance">
+                        <i class="fa-solid fa-diamond"></i>
+                        <span>Try Gemini Advanced</span>
+                    </div>
+                    <i class="fa-solid fa-table-cells grid"></i>
+                    <img src="./user1.png" alt="" class="profile">
+                </div>
+            </div>
+            
+            <div class="selection1"> 
+                <div class="static">
+                    <h1 style="font-style: italic;">Hello!</h1>
+                    <h1 class="secondH1">How Can I Help You today?</h1>
+                    <div class="staticBoxes">
+                        <div class="one">Road trip drive time and kid entertainment ideas</div>
+                        <div class="one">Create a travel itinerary for a city</div>
+                        <div class="one">Create an image & bedtime story</div>
+                        <div class="one">Walk me through how to apply for a new role</div>    
+                    </div>
+                </div>
+                <div class="message"></div>
+                <div class="inputDiv">
+                    <input class="text" type="text" placeholder="Enter a prompt here">
+                    <i class="fa-solid fa-image image"></i>
+                    <i class="fa-solid fa-microphone microphone" ></i>
+                    <i class="fa-solid fa-magnifying-glass button btn"></i>
+                </div>
+                <p>Gemini may display inaccurate info, including about people, so double-check its responses.<u>Your privacy & Gemini Apps</u></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+
+      <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+      <script type="module">
+              import { GoogleGenerativeAI } from "@google/generative-ai";
+              let API_KEY = "AIzaSyAd9ZB9y1FIxzl7rXA-4dueWDtmsPJx19M";
+
+              const genAI = new GoogleGenerativeAI(API_KEY);
+              let btn = document.querySelector(".btn");
+              let statics = document.querySelector(".static");
+              let message = document.querySelector(".message");
+              let new_chat=document.querySelector(".new_chat");
+            //   console.log(btn);
+              let msgContainer = document.getElementById("msg-container");
+  
+              async function runCode(){
+                  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+                  let userInput = document.querySelector(".text").value;
+                  console.log(userInput);
+                  const prompt = userInput;
+                  let inputDiv =document.querySelector(".inputDiv");
+                  
+                  let question = document.createElement("h1");
+                  question.innerText = "Q. "+userInput;
+                  question.style.color="Orange"
+                  message.appendChild(question);
+
+                  let question1=document.createElement("p");
+                  question1.className="questions"
+                  question1.innerText=userInput;
+                  new_chat.appendChild(question1);
+
+
+                  // Assuming `message` is a reference to your HTML element
+                  
+                  
+                  
+                  const result = await model.generateContent(prompt);
+                  const response = await result.response;
+                  const text = response.text();
+                  console.log("res text",text);
+
+                  let botmessagediv = document.createElement("div");
+                  botmessagediv.innerHTML = marked.parse(text);
+                  console.log("reaced last");
+                  if(text.length>0){
+                    statics.innerHTML="";
+                    message.style.overflowY = "auto";
+                    message.style.height="25rem";
+                    inputDiv.style.marginTop = "4rem";
+                    message.appendChild(botmessagediv);
+                  }
+                  else{
+                    console.log("less than zero");
+                  }
+  
+              }
+  
+              btn.addEventListener("click", runCode);
+      </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google API</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="../Gemini/index.html">GEMINI</a></li>
+        <li><a href="../Wikipedia/index.html">WIKIPEDIA</a></li>
+        <li><a href="../Google/index.html">GOOGLE</a></li>
+        <li><a href="../index.html">HOME</a></li>
+      </ul>
+    <section>
+    <div class="main">
+        <img src="./google.jpg" alt="">
+        <div class="searchBx">
+            <input type="text" class="query" value="">
+            <div class="icons">
+                <div><img src="./search.png" ></div>
+                
+                <div><img src="./mic.png" ></div>
+            </div>
+        </div>
+        <div class="button">
+            <button class="searchBtn">Google Search</button>
+        </div>
+    </div>
+</section>
+
+    <script>
+        let query = document.querySelector('.query');
+        let searchBtn = document.querySelector('.searchBtn');
+
+        searchBtn.onclick = function() {
+            let url = 'https://www.google.com/search?q='+query.value;
+           // window.open(url, '_self');
+            window.open(url);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    margin-top: 50px;
+    background-color: white;
+    height: 100%;
+    width: 85%;
+    border-radius: 5px;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    color: black;
+}
+  
+.navbar * {
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+  
+.left-align,
+.right-align {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+  
+.center-align {
+    flex-basis: 0;
+    flex-grow: 2;
+    font-size: 2.5rem;
+}
+  
+.left-align {
+      background: white;
+      color: #121212;
+}
+  
+.center-align {
+      background: white;
+      color: indigo;
+      font-size: 4rem;
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+}
+  
+.right-align {
+    font-style: italic;
+    color: firebrick;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.main-container > .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4rem; 
+}
+
+.main-container > .main {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lavender;
+    margin: 0 4rem;
+    margin-top: 30px;
+    border-radius: 0.5rem;
+   /* margin-bottom: 50px; */
+}
+
+.main-container > .main > .greeting {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 50px;
+    color: saddlebrown;
+}
+
+.main-container > .main > .dateAndTime {
+    font-size: 12px;
+    color: black;
+}
+
+.input-container {
+    width: fit-content;
+    position: relative;
+    margin-top: 16px;
+}
+  
+.input-field {
+    padding: 8px 12px;
+    position: relative;
+}
+  
+.input-field.long {
+    width: 700px;
+   
+}
+  
+.icon1 {
+    position: absolute;
+    right: 90px;
+    top: 7px;
+    cursor: pointer;
+}
+  
+.icon2 {
+    position: absolute;
+    right: 60px;
+    top: 8px;
+    cursor: pointer;
+    
+}
+  
+.icon3 {
+    position: absolute;
+    right: 30px;
+    top: 8px;
+    cursor: pointer;
+}
+  
+.search {
+      width: 9rem;
+      height: 2.5rem;
+      background-color: indigo;
+      border-color: transparent;
+      color: white;
+      cursor: pointer;
+      border-radius: 10px;
+      font-weight: 800;
+      margin-right: 0;
+}
+
+.search:hover {
+    background-color: transparent;
+    color: indigo;
+    border-color: indigo;
+}
+
+@media only screen and (max-width: 650px) {
+    body { background-color: white; }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main > .input-container > input{
+        width: fit-content;
+        position: relative;
+        margin-top: 16px;
+    }
+
+    .input-field.long {
+        width: 500px;
+    }
+
+    .icon1 {
+        position: absolute;
+        right: 70px;
+        top: 20px;
+        cursor: pointer;
+    }
+      
+    .icon2 {
+        position: absolute;
+        right: 50px;
+        top: 20px;
+        cursor: pointer;
+        
+    }
+      
+    .icon3 {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        cursor: pointer;
+    }
+
+    .btn {
+        display: flex;
+        flex-direction: column;
+        column-gap: 1rem;
+    }
+}
