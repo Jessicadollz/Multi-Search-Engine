@@ -21,13 +21,13 @@ The Multi-Search Engine Interface project aims to create a versatile search plat
    - Enables users to access reliable and detailed information for their queries.
 
 4. **User-Friendly Interface**:
-   - Simple and intuitive design for a smooth user experience.
-   - A unified search bar for entering queries that can be directed to Google, Gemini, or Wikipedia.
-   - Tabbed navigation for quick switching between search sources.
+- Simple and intuitive design for a smooth user experience.
+- A unified search bar for entering queries that can be directed to Google, Gemini, or Wikipedia.
+- Tabbed navigation for quick switching between search sources.
 
 5. **Responsive Design**:
-   - Ensures a consistent and optimized experience across various devices and screen sizes.
-   - Mobile-friendly layout for users on the go.
+- Ensures a consistent and optimized experience across various devices and screen sizes.
+- Mobile-friendly layout for users on the go.
 
 ## Technologies Used
 
